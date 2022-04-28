@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var novedadesModel = require('../../models/novedadesModel');
+var novedadesModel = require('./../../models/novedadesModel');
 
 
 router.get('/', async function (req, res, next) {
@@ -40,7 +40,7 @@ router.post('/agregar', async (req, res, next) => {
 });
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id;
-  await novedadesModel.deleteNovedadesById(id);
+  await novedadesModel.deleteNovedadById(id);
   res.redirect('/admin/novedades');
 });
 router.get('modificar/:id', async (req, res, next) => {
