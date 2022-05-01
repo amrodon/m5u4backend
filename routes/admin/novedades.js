@@ -40,12 +40,12 @@ router.post('/agregar', async (req, res, next) => {
 });
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id;
-  await novedadesModel.deleteNovedadById(id);
+  await novedadesModel.deleteNovedadesById(id);
   res.redirect('/admin/novedades');
 });
-router.get('modificar/:id', async (req, res, next) => {
-  let id = req.params.id;
-  let novedad = await novedadesModel.getNovedadById(id);
+router.get('/modificar/:id', async (req, res, next) => {
+  var id = req.params.id;
+  var novedad = await novedadesModel.getNovedadById(id);
   res.render('admin/modificar', {
     layout: 'admin/layout',
     novedad
@@ -53,7 +53,7 @@ router.get('modificar/:id', async (req, res, next) => {
 });
 router.post('/modificar', async (req, res, next) => {
   try {
-    let obj = {
+    var obj = {
       titulo: req.body.titulo,
       subtitulo: req.body.subtitulo,
       cuerpo: req.body.cuerpo
