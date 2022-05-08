@@ -1,5 +1,5 @@
-const async = require('hbs/lib/async');
-const { isAsyncFunction } = require('util/types');
+// const async = require('hbs/lib/async');
+// const { isAsyncFunction } = require('util/types');
 var pool = require('./bd');
 
 async function getNovedades() {
